@@ -332,7 +332,7 @@ function About() {
               <Typography
                 variant="subtitle2"
                 component="h2"
-                sx={{ color: "black", fontSize: "19px", paddingTop: "30px" }}
+                sx={{ color: "black", fontSize: "19px", paddingTop: "30px",textAlign:"justify" }}
               >
                 Sagehill is an enabler of 4IR(the 4th Industrial Revolution)
                 mainly focusing on digital transformation through business

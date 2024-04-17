@@ -53,8 +53,8 @@ function Footer() {
           >
             <Image
               src={Logo}
-              style={{ height: "110px", width: "auto" }}
-              alt="Sagehill Technologies Logo"
+              style={{ height: "90px", width: "auto" }}
+              alt="White Sagehill Technologies Logo"
               className="logoTwo"
             />
             <Box sx={{ marginTop: "10px" }}>
@@ -110,11 +110,11 @@ function Footer() {
             sm={12}
             md={6}
             className="column"
-            // sx={{ display: "flex"}}
+            sx={{ paddingTop: "30px !important"}}
           >
              <iframe
               src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d121556.15053757964!2d30.991876444671615!3d-17.8090919450945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e6!4m5!1s0x1931a5d9bdbd6047%3A0x55c4b60f3f138a3!2sSagehill%20Business%20Solutions%2C%2023%20South%20Wing%20Mon%20Repos%20Newlands%20Shopping%20Centre%20Harare%2C%20zimbabwe%2C%20Zimbabwe!3m2!1d-17.809109199999998!2d31.074279599999997!4m4!1s0x1931a5d9bdbd6047%3A0x55c4b60f3f138a3!3m2!1d-17.809109199999998!2d31.074279599999997!5e0!3m2!1sen!2sus!4v1712743826143!5m2!1sen!2sus"
-              width="550"
+              width="100%"
               height="309"
               allowFullScreen
               loading="lazy"
@@ -133,7 +133,7 @@ function Footer() {
           <Typography
                 variant="subtitle2"
                 component="h2"
-                sx={{ color: "white", fontSize: "19px", marginLeft: "10px", marginTop:"20px", marginBottom:"20px" }}
+                sx={{ color: "white", fontSize: "19px", marginLeft: "34px", marginTop:"20px", marginBottom:"20px" }}
               >
               © 2024 sagehilltechnologies ,All Rights Reserved. Design by Sagehill Business Solutions
               </Typography>

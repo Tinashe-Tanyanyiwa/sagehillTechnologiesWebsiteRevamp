@@ -13,7 +13,7 @@ export default function Home() {
    <div className={styles.center} style ={{width: "100%"}}>
     <CssBaseline />
     <Landing></Landing>
-    <About></About>
+    {/* <About></About> */}
     <Services></Services>
     <Contact></Contact>
     <Footer></Footer>

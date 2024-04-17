@@ -1,11 +1,11 @@
-.bg-img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 /* .bg-img-one{
   background-size: cover;
@@ -15,16 +15,40 @@
 } */
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Blue color with 20% opacity */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Blue color with 20% opacity */
+}
+.css-1hzi63y-MuiGrid-root {
+  margin-top: 30px !important;
+}
+.css-46bh2p-MuiCardContent-root {
+  padding: 0px;
+}
+
+.bg-img-zero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+@media (max-width: 876px) {
+  .landIcon {
+    padding-top: 80px !important;
   }
-  .css-1hzi63y-MuiGrid-root{
-    margin-top: 30px !important;
+  .sagehillGuys {
+    max-height: 300px !important;
   }
-  .css-46bh2p-MuiCardContent-root {
-    padding: 0px;
+  .aboutUs {
+    justify-content: center;
+    margin-top: 30px;
+  }
 }

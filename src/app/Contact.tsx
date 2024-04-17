@@ -177,6 +177,7 @@ function Contact() {
               whileHover="hover"
               size="medium"
               variant="contained"
+              sx={{ borderRadius: "0px 0px 45px", maxWidth: "300px" }}
             >
               Submit
             </AnimatedButton>
@@ -185,7 +186,12 @@ function Contact() {
               whileHover="hover"
               size="medium"
               variant="contained"
-              sx={{ marginLeft: "25px" }}
+              sx={{
+                marginLeft: "25px",
+                borderRadius: "0px 0px 45px",
+                backgroundColor: "grey",
+                maxWidth: "300px",
+              }}
             >
               Clear
             </AnimatedButton>

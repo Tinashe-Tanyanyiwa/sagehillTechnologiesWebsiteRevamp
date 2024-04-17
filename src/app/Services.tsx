@@ -29,7 +29,38 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { styled } from "@mui/system";
 import Button from "@mui/material/Button";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import servicesBackground from "../../public/Images/servicesBackground.png"
+import servicesBackground from "../../public/Images/servicesBackground.png";
+import landingAndAboutBackground from "../../public/Images/landingAndAboutBackground.png";
+import Backdrop from "@mui/material/Backdrop";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import modalBackground from "../../public/Images/modalBackground.png";
+import TextField from "@mui/material/TextField";
+import softwareDevelopmentModal from "../../public/Images/softwareDevelopmentModal.jpg";
+import CardActions from "@mui/material/CardActions";
+import missionIcon from "../../public/Images/missionIcon.png";
+import domainsHosting from "../../public/Images/domainsHosting.jpg";
+import itSupport from '../../public/Images/itSupport.jpg'
+
+// MODAL OPEN
+
+const style = {
+  // position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  maxWidth: 450,
+  // bgcolor: "background.paper",
+  // border: "0px solid transparent",
+  // boxShadow: 24,
+  // p: 4,
+  // borderRadius: "20px",
+  // minHeight: "500px",
+  position: "relative",
+  display: "flex",
+  justifyContent: "center",
+  // padding: " 20px 50px 0px 50px",
+};
 
 // CODE TO ADD BUTTON
 const AnimatedButton = styled(motion(Button))`
@@ -52,10 +83,33 @@ const buttonVariants = {
 };
 
 function Services() {
+  // SOFTWARE MODAL
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  // END OF MODAL
+
+  // HOSTING AND DOMAINS MODAL
+  const [openone, setOpenone] = React.useState(false);
+  const handleOpenone = () => setOpenone(true);
+  const handleCloseone = () => setOpenone(false);
+  // END OF MODAL
+
+  //IT SUPPORT MODAL
+  const [opentwo, setOpentwo] = React.useState(false);
+  const handleOpentwo = () => setOpentwo(true);
+  const handleClosetwo = () => setOpentwo(false);
+  // END OF MODAL
+
   const theme = useTheme();
   return (
     <div style={{ height: "auto", position: "relative" }}>
-      <Image src={servicesBackground} className="bg-img" alt={"Background Image"} style={{opacity:"0.1"}} />
+      <Image
+        src={servicesBackground}
+        className="bg-img"
+        alt={"Background Image"}
+        style={{ opacity: "0.1" }}
+      />
       <Box>
         <Grid
           className="row"
@@ -157,9 +211,95 @@ function Services() {
                             textTransform: "none",
                             fontFamily: "Dancing Script",
                           }}
+                          onClick={handleOpen}
                         >
                           Learn More
                         </Typography>
+                        <Modal
+                          aria-labelledby="transition-modal-title"
+                          aria-describedby="transition-modal-description"
+                          open={open}
+                          onClose={handleClose}
+                          closeAfterTransition
+                          slots={{ backdrop: Backdrop }}
+                          slotProps={{
+                            backdrop: {
+                              timeout: 500,
+                            },
+                          }}
+                        >
+                          <Fade in={open}>
+                            <Box sx={style}>
+                              <Card
+                                sx={{
+                                  minWidth: 275,
+                                  padding: "0px 12px 0px 12px",
+                                  margin: "0 0px 30px 0px",
+                                  width: "400px",
+                                }}
+                              >
+                                <CardContent>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    md={12}
+                                    className="column"
+                                    sx={{
+                                      display: "flex",
+                                      justifyContent: "center",
+                                    }}
+                                  >
+                                    <CardMedia
+                                      component="img"
+                                      image={softwareDevelopmentModal.src}
+                                      style={{ height: "250px", width: "auto" }}
+                                      alt="Sagehill Employee"
+                                    />
+                                  </Grid>
+                                  <Typography
+                                    variant="h5"
+                                    component="h2"
+                                    sx={{
+                                      color: "black",
+                                      fontFamily: "Dancing Script",
+                                      textAlign: "center",
+                                      paddingTop: "20px",
+                                    }}
+                                  >
+                                    Software
+                                  </Typography>
+                                </CardContent>
+                                <CardActions
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                  }}
+                                >
+                                  <Typography
+                                    variant="body2"
+                                    style={{ textAlign: "justify" }}
+                                  >
+                                    We offer software development as a service,
+                                    specializing in crafting customized
+                                    solutions to address your unique needs. With
+                                    our experienced team of developers, we have
+                                    the expertise to create web and mobile
+                                    applications that align with your
+                                    requirements. Additionally, we excel in
+                                    integrating systems to streamline your
+                                    business processes and can create tailored
+                                    software products to meet your specific
+                                    objectives. Our goal is to deliver
+                                    high-quality solutions that enhance your
+                                    productivity and drive your success.
+                                    <br />
+                                   
+                                  </Typography>
+                                </CardActions>
+                              </Card>
+                            </Box>
+                          </Fade>
+                        </Modal>
                       </AnimatedButton>
                     </IconButton>
                     <IconButton aria-label="play/pause">
@@ -237,9 +377,92 @@ function Services() {
                             textTransform: "none",
                             fontFamily: "Dancing Script",
                           }}
+                          onClick={handleOpenone}
                         >
                           Learn More
                         </Typography>
+                        <Modal
+                          aria-labelledby="transition-modal-title"
+                          aria-describedby="transition-modal-description"
+                          open={openone}
+                          onClose={handleCloseone}
+                          closeAfterTransition
+                          slots={{ backdrop: Backdrop }}
+                          slotProps={{
+                            backdrop: {
+                              timeout: 500,
+                            },
+                          }}
+                        >
+                          <Fade in={openone}>
+                            <Box sx={style}>
+                              <Card
+                                sx={{
+                                  minWidth: 275,
+                                  padding: "0px 12px 0px 12px",
+                                  margin: "0 0px 30px 0px",
+                                  width: "400px",
+                                }}
+                              >
+                                <CardContent>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    md={12}
+                                    className="column"
+                                    sx={{
+                                      display: "flex",
+                                      justifyContent: "center",
+                                    }}
+                                  >
+                                    <CardMedia
+                                      component="img"
+                                      image={domainsHosting.src}
+                                      style={{ height: "250px", width: "auto" }}
+                                      alt="Sagehill Employee"
+                                    />
+                                  </Grid>
+                                  <Typography
+                                    variant="h5"
+                                    component="h2"
+                                    sx={{
+                                      color: "black",
+                                      fontFamily: "Dancing Script",
+                                      textAlign: "center",
+                                      paddingTop: "20px",
+                                    }}
+                                  >
+                                    Hosting & Domains
+                                  </Typography>
+                                </CardContent>
+                                <CardActions
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                  }}
+                                >
+                                  <Typography
+                                    variant="body2"
+                                    style={{ textAlign: "justify" }}
+                                  >
+                                    We offer comprehensive hosting and domain
+                                    services to establish and enhance your
+                                    online presence. Our reliable hosting
+                                    solutions ensure your website or application
+                                    is always accessible, while our domain
+                                    services help you secure the perfect domain
+                                    name. With our expertise, you can build a
+                                    strong online brand and reach your target
+                                    audience effectively. Get in touch to learn
+                                    more about our hosting and domain solutions.
+                                    <br />
+                                  
+                                  </Typography>
+                                </CardActions>
+                              </Card>
+                            </Box>
+                          </Fade>
+                        </Modal>
                       </AnimatedButton>
                     </IconButton>
                     <IconButton aria-label="play/pause">
@@ -317,9 +540,96 @@ function Services() {
                             textTransform: "none",
                             fontFamily: "Dancing Script",
                           }}
+                          onClick={handleOpentwo}
                         >
                           Learn More
                         </Typography>
+                        <Modal
+                          aria-labelledby="transition-modal-title"
+                          aria-describedby="transition-modal-description"
+                          open={opentwo}
+                          onClose={handleClosetwo}
+                          closeAfterTransition
+                          slots={{ backdrop: Backdrop }}
+                          slotProps={{
+                            backdrop: {
+                              timeout: 500,
+                            },
+                          }}
+                        >
+                          <Fade in={opentwo}>
+                            <Box sx={style}>
+                              <Card
+                                sx={{
+                                  minWidth: 275,
+                                  padding: "0px 12px 0px 12px",
+                                  margin: "0 0px 30px 0px",
+                                  width: "400px",
+                                }}
+                              >
+                                <CardContent>
+                                  <Grid
+                                    item
+                                    sm={12}
+                                    md={12}
+                                    className="column"
+                                    sx={{
+                                      display: "flex",
+                                      justifyContent: "center",
+                                    }}
+                                  >
+                                    <CardMedia
+                                      component="img"
+                                      image={itSupport.src}
+                                      style={{ height: "250px", width: "auto" }}
+                                      alt="Sagehill Employee"
+                                    />
+                                  </Grid>
+                                  <Typography
+                                    variant="h5"
+                                    component="h2"
+                                    sx={{
+                                      color: "black",
+                                      fontFamily: "Dancing Script",
+                                      textAlign: "center",
+                                      paddingTop: "20px",
+                                    }}
+                                  >
+                                    IT Support
+                                  </Typography>
+                                </CardContent>
+                                <CardActions
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                  }}
+                                >
+                                  <Typography
+                                    variant="body2"
+                                    style={{ textAlign: "justify" }}
+                                  >
+                                    We provide reliable IT support services to
+                                    keep your systems running smoothly. Our
+                                    experienced team offers comprehensive
+                                    assistance to address your technology needs,
+                                    from troubleshooting hardware and software
+                                    issues to managing network infrastructure.
+                                    With our expertise, you can rely on
+                                    efficient IT operations, minimizing downtime
+                                    and maximizing productivity. Whether you
+                                    need help desk support, system maintenance,
+                                    or strategic IT consulting, we are here to
+                                    assist you. Contact us today to learn more
+                                    about our IT support services and how we can
+                                    help your business thrive.
+                                    <br />
+                                  
+                                  </Typography>
+                                </CardActions>
+                              </Card>
+                            </Box>
+                          </Fade>
+                        </Modal>
                       </AnimatedButton>
                     </IconButton>
                     <IconButton aria-label="play/pause">
