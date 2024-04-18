@@ -51,4 +51,12 @@
     justify-content: center;
     margin-top: 30px;
   }
+  .aboutFIR{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .contactUs{
+    display: flex;
+    justify-content: center;
+  }
 }

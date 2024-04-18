@@ -23,8 +23,10 @@ import { motion } from "framer-motion";
 import { styled } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
-
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 // HOVER FOR BUTTON
 const buttonVariants = {
@@ -46,6 +48,15 @@ const AnimatedButton = styled(motion(Button))`
 `;
 
 function Contact() {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div style={{ height: "auto" }}>
       <Grid
@@ -95,6 +106,7 @@ function Contact() {
           <motion.div
             whileHover={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="contactUs"
           >
             <Typography
               variant="h5"
@@ -131,9 +143,29 @@ function Contact() {
             size="medium"
             variant="contained"
             sx={{ marginTop: "40px" }}
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
           >
-            info@sagehilltechnologies.com
+            The Emails we use{" "}
+            <IconButton aria-label="success rate">
+              <ArrowDropDownIcon sx={{ color: "#1976d2" }} />
+            </IconButton>
           </AnimatedButton>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <MenuItem onClick={handleClose}>info@sagehilltechnologies.com</MenuItem>
+            <MenuItem onClick={handleClose}>support@sagehilltechnologies.comt</MenuItem>
+          </Menu>
         </Grid>
         <Grid
           item

@@ -280,7 +280,7 @@ function Landing() {
             sx={{ paddingLeft: "100px !important" }}
             className="column"
           >
-            <Grid item xs={12}>
+            <Grid item xs={11}>
               <motion.div
                 whileHover={{ scale: 1.1, originX: 0, color: "#f8e112" }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -294,7 +294,7 @@ function Landing() {
                 </Typography>
               </motion.div>
             </Grid>
-            <Grid item xs={12} sx={{ mt: 2 }}>
+            <Grid item xs={11} sx={{ mt: 2 }}>
               <motion.div
                 whileHover={{ scale: 1.1, originX: 0, color: "#f8e112" }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -422,7 +422,7 @@ function Landing() {
             sx={{ display: "flex", justifyContent: "center" }}
           >
             <motion.div
-              whileHover={{ scale: 1.2, rotate: 90 }}
+              whileHover={{ scale: 1.1, rotate: 90 }}
               whileTap={{
                 scale: 0.8,
                 rotate: -90,
@@ -432,7 +432,7 @@ function Landing() {
             >
               <Image
                 src={sagehillProfessionals}
-                style={{ height: "300px", width: "auto" }}
+                style={{ height: "250px", width: "auto" }}
                 alt="Sagehill Professionals"
                 className="logoTwo"
               />
@@ -464,60 +464,67 @@ function Landing() {
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <motion.div
-                whileHover={{ scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                // viewport={{once : true}}
               >
-                <Card
-                  sx={{
-                    minWidth: 275,
-                    padding: "0px 12px 0px 12px",
-                    margin: "0 0px 30px 0px",
-                    width: "300px",
-                  }}
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <CardContent>
-                    <Grid
-                      item
-                      sm={12}
-                      md={12}
-                      className="column"
-                      sx={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <CardMedia
-                        component="img"
-                        image={missionIcon.src}
-                        style={{ height: "250px", width: "auto" }}
-                        alt="Sagehill Employee"
-                      />
-                    </Grid>
-                    <Typography
-                      variant="h5"
-                      component="h2"
-                      sx={{
-                        color: "black",
-                        fontFamily: "Dancing Script",
-                        textAlign: "center",
-                      }}
-                    >
-                      Our Mission
-                    </Typography>
-                  </CardContent>
-                  <CardActions
-                    style={{ display: "flex", justifyContent: "center" }}
+                  <Card
+                    sx={{
+                      minWidth: 275,
+                      padding: "0px 12px 0px 12px",
+                      margin: "0 0px 30px 0px",
+                      width: "300px",
+                    }}
                   >
-                    <Typography
-                      variant="body2"
-                      style={{ textAlign: "justify" }}
+                    <CardContent>
+                      <Grid
+                        item
+                        sm={12}
+                        md={12}
+                        className="column"
+                        sx={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <CardMedia
+                          component="img"
+                          image={missionIcon.src}
+                          style={{ height: "250px", width: "auto" }}
+                          alt="Sagehill Employee"
+                        />
+                      </Grid>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        sx={{
+                          color: "black",
+                          fontFamily: "Dancing Script",
+                          textAlign: "center",
+                        }}
+                      >
+                        Our Mission
+                      </Typography>
+                    </CardContent>
+                    <CardActions
+                      style={{ display: "flex", justifyContent: "center" }}
                     >
-                      To Assist individuals and organizations throughout the
-                      world gain competitive advantage through the provision of
-                      innovative and simplified ICT business solutions that
-                      improve their profitability.
-                      <br />
-                      {'"a benevolent smile"'}
-                    </Typography>
-                  </CardActions>
-                </Card>
+                      <Typography
+                        variant="body2"
+                        style={{ textAlign: "justify" }}
+                      >
+                        To Assist individuals and organizations throughout the
+                        world gain competitive advantage through the provision
+                        of innovative and simplified ICT business solutions that
+                        improve their profitability.
+                        <br />
+                        {'"a benevolent smile"'}
+                      </Typography>
+                    </CardActions>
+                  </Card>
+                </motion.div>
               </motion.div>
             </Grid>
             <Grid
@@ -528,59 +535,67 @@ function Landing() {
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <motion.div
-                whileHover={{ scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                // viewport={{once : true}}
               >
-                <Card
-                  sx={{
-                    minWidth: 275,
-                    padding: "0px 12px 0px 12px",
-                    margin: "0 0px 30px 0px",
-                    width: "300px",
-                  }}
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <CardContent>
-                    <Grid
-                      item
-                      sm={12}
-                      md={12}
-                      className="column"
-                      sx={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <CardMedia
-                        component="img"
-                        image={visionIcon.src}
-                        style={{ height: "250px", width: "auto" }}
-                        alt="Sagehill Employee"
-                      />
-                    </Grid>
-                    <Typography
-                      variant="h5"
-                      component="h2"
-                      sx={{
-                        color: "black",
-                        fontFamily: "Dancing Script",
-                        textAlign: "center",
-                      }}
-                    >
-                      Our Vision
-                    </Typography>
-                  </CardContent>
-                  <CardActions
-                    style={{ display: "flex", justifyContent: "center" }}
+                  <Card
+                    sx={{
+                      minWidth: 275,
+                      padding: "0px 12px 0px 12px",
+                      margin: "0 0px 30px 0px",
+                      width: "300px",
+                    }}
                   >
-                    <Typography
-                      variant="body2"
-                      style={{ textAlign: "justify" }}
+                    <CardContent>
+                      <Grid
+                        item
+                        sm={12}
+                        md={12}
+                        className="column"
+                        sx={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <CardMedia
+                          component="img"
+                          image={visionIcon.src}
+                          style={{ height: "250px", width: "auto" }}
+                          alt="Sagehill Employee"
+                        />
+                      </Grid>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        sx={{
+                          color: "black",
+                          fontFamily: "Dancing Script",
+                          textAlign: "center",
+                        }}
+                      >
+                        Our Vision
+                      </Typography>
+                    </CardContent>
+                    <CardActions
+                      style={{ display: "flex", justifyContent: "center" }}
                     >
-                      To provide the business community with timely cost
-                      effective and high quality ICT products thereby maximizing
-                      wealth for shareholders and other key stakeholders.
-                      <br />
-                      {'"a benevolent smile"'}
-                    </Typography>
-                  </CardActions>
-                </Card>
+                      <Typography
+                        variant="body2"
+                        style={{ textAlign: "justify" }}
+                      >
+                        To provide the business community with timely cost
+                        effective and high quality ICT products thereby
+                        maximizing wealth for shareholders and other key
+                        stakeholders.
+                        <br />
+                        {'"a benevolent smile"'}
+                      </Typography>
+                    </CardActions>
+                  </Card>
+                </motion.div>
               </motion.div>
             </Grid>
             <Grid
@@ -591,60 +606,67 @@ function Landing() {
               sx={{ display: "flex", justifyContent: "center" }}
             >
               <motion.div
-                whileHover={{ scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                // viewport={{once : true}}
               >
-                <Card
-                  sx={{
-                    minWidth: 275,
-                    padding: "0px 12px 0px 12px",
-                    margin: "0 0px 30px 0px",
-                    width: "300px",
-                  }}
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <CardContent>
-                    <Grid
-                      item
-                      sm={12}
-                      md={12}
-                      className="column"
-                      sx={{ display: "flex", justifyContent: "center" }}
-                    >
-                      <CardMedia
-                        component="img"
-                        image={didYouKnow.src}
-                        style={{ height: "250px", width: "auto" }}
-                        alt="Sagehill Employee"
-                      />
-                    </Grid>
-                    <Typography
-                      variant="h5"
-                      component="h2"
-                      sx={{
-                        color: "black",
-                        fontFamily: "Dancing Script",
-                        textAlign: "center",
-                      }}
-                    >
-                      Did you know?
-                    </Typography>
-                  </CardContent>
-                  <CardActions
-                    style={{ display: "flex", justifyContent: "center" }}
+                  <Card
+                    sx={{
+                      minWidth: 275,
+                      padding: "0px 12px 0px 12px",
+                      margin: "0 0px 30px 0px",
+                      width: "300px",
+                    }}
                   >
-                    <Typography
-                      variant="body2"
-                      style={{ textAlign: "justify" }}
+                    <CardContent>
+                      <Grid
+                        item
+                        sm={12}
+                        md={12}
+                        className="column"
+                        sx={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <CardMedia
+                          component="img"
+                          image={didYouKnow.src}
+                          style={{ height: "250px", width: "auto" }}
+                          alt="Sagehill Employee"
+                        />
+                      </Grid>
+                      <Typography
+                        variant="h5"
+                        component="h2"
+                        sx={{
+                          color: "black",
+                          fontFamily: "Dancing Script",
+                          textAlign: "center",
+                        }}
+                      >
+                        Did you know?
+                      </Typography>
+                    </CardContent>
+                    <CardActions
+                      style={{ display: "flex", justifyContent: "center" }}
                     >
-                      Sagehill Business Solutions is a wholly owned Zimbabwean
-                      Company, established in 2011 by an innovative team of
-                      highly motivated and energetic, young entrepreneurs with
-                      international experience.
-                      <br />
-                      {'"a benevolent smile"'}
-                    </Typography>
-                  </CardActions>
-                </Card>
+                      <Typography
+                        variant="body2"
+                        style={{ textAlign: "justify" }}
+                      >
+                        Sagehill Business Solutions is a wholly owned Zimbabwean
+                        Company, established in 2011 by an innovative team of
+                        highly motivated and energetic, young entrepreneurs with
+                        international experience.
+                        <br />
+                        {'"a benevolent smile"'}
+                      </Typography>
+                    </CardActions>
+                  </Card>
+                </motion.div>
               </motion.div>
             </Grid>
           </Grid>
@@ -669,12 +691,19 @@ function Landing() {
                 alignItems: "center",
               }}
             >
-              <Image
-                src={sagehillGuys}
-                style={{ maxHeight: "380px", width: "auto" }}
-                alt="Sagehill Employee"
-                className="sagehillGuys"
-              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                // viewport={{once : true}}
+              >
+                <Image
+                  src={sagehillGuys}
+                  style={{ maxHeight: "380px", width: "auto" }}
+                  alt="Sagehill Employee"
+                  className="sagehillGuys"
+                />
+              </motion.div>
             </Grid>
             <Grid
               item
@@ -683,73 +712,74 @@ function Landing() {
               className="column"
               // sx={{ display: "flex"}}
             >
-              {/* <Grid item xs={12}> */}
-              {/* <motion.div
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                // viewport={{once : true}}
+              >
+                <motion.div
+                  whileHover={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 10 }}
+                  style={{
+                    display: "flex",
+                  }}
+                  className="aboutUs"
+                >
+                  <Typography
+                    variant="h5"
+                    component="h2"
+                    sx={{
+                      color: "white",
+                      fontFamily: "Dancing Script",
+                      backgroundColor: "#222D3D",
+                      width: "60%",
+                      height: "50px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "200px 0px 200px",
+                      textAlign: "justify",
+                    }}
+                  >
+                    About Us
+                    <IconButton aria-label="success rate">
+                      <FormatQuoteIcon sx={{ color: "#1976d2" }} />
+                    </IconButton>
+                  </Typography>
+                </motion.div>
+                {/* </motion.div> */}
+                {/* </Grid> */}
+                {/* <br /> */}
+                {/* <Grid item xs={12} sx={{ mt: 2 }}> */}
+                {/* <motion.div
                   whileHover={{ scale: 1.1, originX: 0, color: "#f8e112" }}
                   transition={{ type: "spring", stiffness: 300 }}
                 > */}
-              <motion.div
-                whileHover={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 500, damping: 10 }}
-                style={{
-                  display: "flex",
-                }}
-                className="aboutUs"
-              >
                 <Typography
-                  variant="h5"
+                  variant="subtitle2"
                   component="h2"
                   sx={{
-                    color: "white",
-                    fontFamily: "Dancing Script",
-                    backgroundColor: "#222D3D",
-                    width: "60%",
-                    height: "50px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: "200px 0px 200px",
+                    color: "black",
+                    fontSize: "19px",
+                    paddingTop: "30px",
                     textAlign: "justify",
                   }}
+                  className="aboutFIR"
                 >
-                  About Us
-                  <IconButton aria-label="success rate">
-                    <FormatQuoteIcon sx={{ color: "#1976d2" }} />
-                  </IconButton>
+                  Sagehill is an enabler of 4IR(the 4th Industrial Revolution)
+                  mainly focusing on digital transformation through business
+                  process automation. We offer a wide range of ICT Solutions
+                  including Mobile applications development, Sagehill Hospital
+                  Management Information System, Enterprise Resource Planning
+                  Software, Web Hosting and Web Design services, Consultancy
+                  Services as well Computer Hardware and Accessories Supply
+                  across Zimbabwe and Zambia. As Sagehill we have partnered with
+                  organisations such as IBM and Palladium Accounting South
+                  Africa, UiPath, Microsoft, Eset, Sophos and Kasperky to assist
+                  in the goal to simplify technology.
                 </Typography>
               </motion.div>
-              {/* </motion.div> */}
-              {/* </Grid> */}
-              {/* <br /> */}
-              {/* <Grid item xs={12} sx={{ mt: 2 }}> */}
-              {/* <motion.div
-                  whileHover={{ scale: 1.1, originX: 0, color: "#f8e112" }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                > */}
-              <Typography
-                variant="subtitle2"
-                component="h2"
-                sx={{
-                  color: "black",
-                  fontSize: "19px",
-                  paddingTop: "30px",
-                  textAlign: "justify",
-                }}
-              >
-                Sagehill is an enabler of 4IR(the 4th Industrial Revolution)
-                mainly focusing on digital transformation through business
-                process automation. We offer a wide range of ICT Solutions
-                including Mobile applications development, Sagehill Hospital
-                Management Information System, Enterprise Resource Planning
-                Software, Web Hosting and Web Design services, Consultancy
-                Services as well Computer Hardware and Accessories Supply across
-                Zimbabwe and Zambia. As Sagehill we have partnered with
-                organisations such as IBM and Palladium Accounting South Africa,
-                UiPath, Microsoft, Eset, Sophos and Kasperky to assist in the
-                goal to simplify technology.
-              </Typography>
-              {/* </motion.div> */}
-              {/* </Grid> */}
             </Grid>
           </Grid>
         </Container>

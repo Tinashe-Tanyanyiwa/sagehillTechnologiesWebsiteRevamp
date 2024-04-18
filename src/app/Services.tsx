@@ -40,7 +40,7 @@ import softwareDevelopmentModal from "../../public/Images/softwareDevelopmentMod
 import CardActions from "@mui/material/CardActions";
 import missionIcon from "../../public/Images/missionIcon.png";
 import domainsHosting from "../../public/Images/domainsHosting.jpg";
-import itSupport from '../../public/Images/itSupport.jpg'
+import itSupport from "../../public/Images/itSupport.jpg";
 
 // MODAL OPEN
 
@@ -154,7 +154,7 @@ function Services() {
         >
           <Grid
             item
-            sm={12}
+            sm={11}
             md={6}
             className="column"
             sx={{
@@ -164,163 +164,181 @@ function Services() {
             }}
           >
             <motion.div
-              whileHover={{ scale: 1.2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              // viewport={{once : true}}
             >
-              <Card sx={{ display: "flex" }}>
-                <Box sx={{ display: "flex", flexDirection: "column" }}>
-                  <CardContent sx={{ flex: "1 0 auto", marginBottom: "40px" }}>
-                    <Typography
-                      component="div"
-                      variant="h5"
-                      sx={{ width: "243.8px" }}
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <Card sx={{ display: "flex" }}>
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <CardContent
+                      sx={{ flex: "1 0 auto", marginBottom: "40px" }}
                     >
-                      Software Development
-                    </Typography>
-                    <Typography
-                      variant="subtitle1"
-                      color="text.secondary"
-                      component="div"
-                    >
-                      Front-end & Back-end
-                    </Typography>
-                  </CardContent>
-                  <Box
-                    sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}
-                  >
-                    <IconButton aria-label="play/pause">
-                      <ShareIcon sx={{ height: 20, width: 20 }} />
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                      <AnimatedButton
-                        variants={buttonVariants}
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 17,
-                        }}
-                        size="small"
-                        variant="contained"
-                        sx={{ borderRadius: "95px 95px 95px 95px" }}
+                      <Typography
+                        component="div"
+                        variant="h5"
+                        sx={{ width: "243.8px" }}
                       >
-                        <Typography
-                          variant="body1"
-                          style={{
-                            textTransform: "none",
-                            fontFamily: "Dancing Script",
+                        Software Development
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        color="text.secondary"
+                        component="div"
+                      >
+                        Front-end & Back-end
+                      </Typography>
+                    </CardContent>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        pl: 1,
+                        pb: 1,
+                      }}
+                    >
+                      <IconButton aria-label="play/pause">
+                        <ShareIcon sx={{ height: 20, width: 20 }} />
+                      </IconButton>
+                      <IconButton aria-label="play/pause">
+                        <AnimatedButton
+                          variants={buttonVariants}
+                          whileHover={{ scale: 1.2 }}
+                          whileTap={{ scale: 0.9 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 400,
+                            damping: 17,
                           }}
-                          onClick={handleOpen}
+                          size="small"
+                          variant="contained"
+                          sx={{ borderRadius: "95px 95px 95px 95px" }}
                         >
-                          Learn More
-                        </Typography>
-                        <Modal
-                          aria-labelledby="transition-modal-title"
-                          aria-describedby="transition-modal-description"
-                          open={open}
-                          onClose={handleClose}
-                          closeAfterTransition
-                          slots={{ backdrop: Backdrop }}
-                          slotProps={{
-                            backdrop: {
-                              timeout: 500,
-                            },
-                          }}
-                        >
-                          <Fade in={open}>
-                            <Box sx={style}>
-                              <Card
-                                sx={{
-                                  minWidth: 275,
-                                  padding: "0px 12px 0px 12px",
-                                  margin: "0 0px 30px 0px",
-                                  width: "400px",
-                                }}
-                              >
-                                <CardContent>
-                                  <Grid
-                                    item
-                                    sm={12}
-                                    md={12}
-                                    className="column"
-                                    sx={{
+                          <Typography
+                            variant="body1"
+                            style={{
+                              textTransform: "none",
+                              fontFamily: "Dancing Script",
+                            }}
+                            onClick={handleOpen}
+                          >
+                            Learn More
+                          </Typography>
+
+                          <Modal
+                            aria-labelledby="transition-modal-title"
+                            aria-describedby="transition-modal-description"
+                            open={open}
+                            onClose={handleClose}
+                            closeAfterTransition
+                            slots={{ backdrop: Backdrop }}
+                            slotProps={{
+                              backdrop: {
+                                timeout: 500,
+                              },
+                            }}
+                          >
+                            <Fade in={open}>
+                              <Box sx={style}>
+                                <Card
+                                  sx={{
+                                    minWidth: 275,
+                                    padding: "0px 12px 0px 12px",
+                                    margin: "0 0px 30px 0px",
+                                    width: "400px",
+                                  }}
+                                >
+                                  <CardContent>
+                                    <Grid
+                                      item
+                                      sm={12}
+                                      md={12}
+                                      className="column"
+                                      sx={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <CardMedia
+                                        component="img"
+                                        image={softwareDevelopmentModal.src}
+                                        style={{
+                                          height: "250px",
+                                          width: "auto",
+                                        }}
+                                        alt="Sagehill Employee"
+                                      />
+                                    </Grid>
+                                    <Typography
+                                      variant="h5"
+                                      component="h2"
+                                      sx={{
+                                        color: "black",
+                                        fontFamily: "Dancing Script",
+                                        textAlign: "center",
+                                        paddingTop: "20px",
+                                      }}
+                                    >
+                                      Software
+                                    </Typography>
+                                  </CardContent>
+                                  <CardActions
+                                    style={{
                                       display: "flex",
                                       justifyContent: "center",
                                     }}
                                   >
-                                    <CardMedia
-                                      component="img"
-                                      image={softwareDevelopmentModal.src}
-                                      style={{ height: "250px", width: "auto" }}
-                                      alt="Sagehill Employee"
-                                    />
-                                  </Grid>
-                                  <Typography
-                                    variant="h5"
-                                    component="h2"
-                                    sx={{
-                                      color: "black",
-                                      fontFamily: "Dancing Script",
-                                      textAlign: "center",
-                                      paddingTop: "20px",
-                                    }}
-                                  >
-                                    Software
-                                  </Typography>
-                                </CardContent>
-                                <CardActions
-                                  style={{
-                                    display: "flex",
-                                    justifyContent: "center",
-                                  }}
-                                >
-                                  <Typography
-                                    variant="body2"
-                                    style={{ textAlign: "justify" }}
-                                  >
-                                    We offer software development as a service,
-                                    specializing in crafting customized
-                                    solutions to address your unique needs. With
-                                    our experienced team of developers, we have
-                                    the expertise to create web and mobile
-                                    applications that align with your
-                                    requirements. Additionally, we excel in
-                                    integrating systems to streamline your
-                                    business processes and can create tailored
-                                    software products to meet your specific
-                                    objectives. Our goal is to deliver
-                                    high-quality solutions that enhance your
-                                    productivity and drive your success.
-                                    <br />
-                                   
-                                  </Typography>
-                                </CardActions>
-                              </Card>
-                            </Box>
-                          </Fade>
-                        </Modal>
-                      </AnimatedButton>
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                      <FavoriteIcon
-                        sx={{ height: 20, width: 20, color: "red" }}
-                      />
-                    </IconButton>
+                                    <Typography
+                                      variant="body2"
+                                      style={{ textAlign: "justify" }}
+                                    >
+                                      We offer software development as a
+                                      service, specializing in crafting
+                                      customized solutions to address your
+                                      unique needs. With our experienced team of
+                                      developers, we have the expertise to
+                                      create web and mobile applications that
+                                      align with your requirements.
+                                      Additionally, we excel in integrating
+                                      systems to streamline your business
+                                      processes and can create tailored software
+                                      products to meet your specific objectives.
+                                      Our goal is to deliver high-quality
+                                      solutions that enhance your productivity
+                                      and drive your success.
+                                      <br />
+                                    </Typography>
+                                  </CardActions>
+                                </Card>
+                              </Box>
+                            </Fade>
+                          </Modal>
+                        </AnimatedButton>
+                      </IconButton>
+                      <IconButton aria-label="play/pause">
+                        <FavoriteIcon
+                          sx={{ height: 20, width: 20, color: "red" }}
+                        />
+                      </IconButton>
+                    </Box>
                   </Box>
-                </Box>
-                <CardMedia
-                  component="img"
-                  sx={{ width: 151 }}
-                  image={domains.src}
-                  alt="domains"
-                />
-              </Card>
+                  <CardMedia
+                    component="img"
+                    sx={{ width: 151 }}
+                    image={domains.src}
+                    alt="domains"
+                  />
+                </Card>
+              </motion.div>
             </motion.div>
           </Grid>
           <Grid
             item
-            sm={12}
+            sm={11}
             md={6}
             className="column"
             sx={{
@@ -330,160 +348,177 @@ function Services() {
             }}
           >
             <motion.div
-              whileHover={{ scale: 1.2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              // viewport={{once : true}}
             >
-              <Card sx={{ display: "flex" }}>
-                <Box sx={{ display: "flex", flexDirection: "column" }}>
-                  <CardContent sx={{ flex: "1 0 auto", marginBottom: "40px" }}>
-                    <Typography
-                      component="div"
-                      variant="h5"
-                      sx={{ width: "243.8px" }}
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <Card sx={{ display: "flex" }}>
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <CardContent
+                      sx={{ flex: "1 0 auto", marginBottom: "40px" }}
                     >
-                      Hosting & Domains
-                    </Typography>
-                    <Typography
-                      variant="subtitle1"
-                      color="text.secondary"
-                      component="div"
-                    >
-                      Everything Web Related
-                    </Typography>
-                  </CardContent>
-                  <Box
-                    sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}
-                  >
-                    <IconButton aria-label="play/pause">
-                      <ShareIcon sx={{ height: 20, width: 20 }} />
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                      <AnimatedButton
-                        variants={buttonVariants}
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 17,
-                        }}
-                        size="small"
-                        variant="contained"
-                        sx={{ borderRadius: "95px 95px 95px 95px" }}
+                      <Typography
+                        component="div"
+                        variant="h5"
+                        sx={{ width: "243.8px" }}
                       >
-                        <Typography
-                          variant="body1"
-                          style={{
-                            textTransform: "none",
-                            fontFamily: "Dancing Script",
+                        Hosting & Domains
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        color="text.secondary"
+                        component="div"
+                      >
+                        Everything Web Related
+                      </Typography>
+                    </CardContent>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        pl: 1,
+                        pb: 1,
+                      }}
+                    >
+                      <IconButton aria-label="play/pause">
+                        <ShareIcon sx={{ height: 20, width: 20 }} />
+                      </IconButton>
+                      <IconButton aria-label="play/pause">
+                        <AnimatedButton
+                          variants={buttonVariants}
+                          whileHover={{ scale: 1.2 }}
+                          whileTap={{ scale: 0.9 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 400,
+                            damping: 17,
                           }}
-                          onClick={handleOpenone}
+                          size="small"
+                          variant="contained"
+                          sx={{ borderRadius: "95px 95px 95px 95px" }}
                         >
-                          Learn More
-                        </Typography>
-                        <Modal
-                          aria-labelledby="transition-modal-title"
-                          aria-describedby="transition-modal-description"
-                          open={openone}
-                          onClose={handleCloseone}
-                          closeAfterTransition
-                          slots={{ backdrop: Backdrop }}
-                          slotProps={{
-                            backdrop: {
-                              timeout: 500,
-                            },
-                          }}
-                        >
-                          <Fade in={openone}>
-                            <Box sx={style}>
-                              <Card
-                                sx={{
-                                  minWidth: 275,
-                                  padding: "0px 12px 0px 12px",
-                                  margin: "0 0px 30px 0px",
-                                  width: "400px",
-                                }}
-                              >
-                                <CardContent>
-                                  <Grid
-                                    item
-                                    sm={12}
-                                    md={12}
-                                    className="column"
-                                    sx={{
+                          <Typography
+                            variant="body1"
+                            style={{
+                              textTransform: "none",
+                              fontFamily: "Dancing Script",
+                            }}
+                            onClick={handleOpenone}
+                          >
+                            Learn More
+                          </Typography>
+                          <Modal
+                            aria-labelledby="transition-modal-title"
+                            aria-describedby="transition-modal-description"
+                            open={openone}
+                            onClose={handleCloseone}
+                            closeAfterTransition
+                            slots={{ backdrop: Backdrop }}
+                            slotProps={{
+                              backdrop: {
+                                timeout: 500,
+                              },
+                            }}
+                          >
+                            <Fade in={openone}>
+                              <Box sx={style}>
+                                <Card
+                                  sx={{
+                                    minWidth: 275,
+                                    padding: "0px 12px 0px 12px",
+                                    margin: "0 0px 30px 0px",
+                                    width: "400px",
+                                  }}
+                                >
+                                  <CardContent>
+                                    <Grid
+                                      item
+                                      sm={12}
+                                      md={12}
+                                      className="column"
+                                      sx={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <CardMedia
+                                        component="img"
+                                        image={domainsHosting.src}
+                                        style={{
+                                          height: "250px",
+                                          width: "auto",
+                                        }}
+                                        alt="Sagehill Employee"
+                                      />
+                                    </Grid>
+                                    <Typography
+                                      variant="h5"
+                                      component="h2"
+                                      sx={{
+                                        color: "black",
+                                        fontFamily: "Dancing Script",
+                                        textAlign: "center",
+                                        paddingTop: "20px",
+                                      }}
+                                    >
+                                      Hosting & Domains
+                                    </Typography>
+                                  </CardContent>
+                                  <CardActions
+                                    style={{
                                       display: "flex",
                                       justifyContent: "center",
                                     }}
                                   >
-                                    <CardMedia
-                                      component="img"
-                                      image={domainsHosting.src}
-                                      style={{ height: "250px", width: "auto" }}
-                                      alt="Sagehill Employee"
-                                    />
-                                  </Grid>
-                                  <Typography
-                                    variant="h5"
-                                    component="h2"
-                                    sx={{
-                                      color: "black",
-                                      fontFamily: "Dancing Script",
-                                      textAlign: "center",
-                                      paddingTop: "20px",
-                                    }}
-                                  >
-                                    Hosting & Domains
-                                  </Typography>
-                                </CardContent>
-                                <CardActions
-                                  style={{
-                                    display: "flex",
-                                    justifyContent: "center",
-                                  }}
-                                >
-                                  <Typography
-                                    variant="body2"
-                                    style={{ textAlign: "justify" }}
-                                  >
-                                    We offer comprehensive hosting and domain
-                                    services to establish and enhance your
-                                    online presence. Our reliable hosting
-                                    solutions ensure your website or application
-                                    is always accessible, while our domain
-                                    services help you secure the perfect domain
-                                    name. With our expertise, you can build a
-                                    strong online brand and reach your target
-                                    audience effectively. Get in touch to learn
-                                    more about our hosting and domain solutions.
-                                    <br />
-                                  
-                                  </Typography>
-                                </CardActions>
-                              </Card>
-                            </Box>
-                          </Fade>
-                        </Modal>
-                      </AnimatedButton>
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                      <FavoriteIcon
-                        sx={{ height: 20, width: 20, color: "red" }}
-                      />
-                    </IconButton>
+                                    <Typography
+                                      variant="body2"
+                                      style={{ textAlign: "justify" }}
+                                    >
+                                      We offer comprehensive hosting and domain
+                                      services to establish and enhance your
+                                      online presence. Our reliable hosting
+                                      solutions ensure your website or
+                                      application is always accessible, while
+                                      our domain services help you secure the
+                                      perfect domain name. With our expertise,
+                                      you can build a strong online brand and
+                                      reach your target audience effectively.
+                                      Get in touch to learn more about our
+                                      hosting and domain solutions.
+                                      <br />
+                                    </Typography>
+                                  </CardActions>
+                                </Card>
+                              </Box>
+                            </Fade>
+                          </Modal>
+                        </AnimatedButton>
+                      </IconButton>
+                      <IconButton aria-label="play/pause">
+                        <FavoriteIcon
+                          sx={{ height: 20, width: 20, color: "red" }}
+                        />
+                      </IconButton>
+                    </Box>
                   </Box>
-                </Box>
-                <CardMedia
-                  component="img"
-                  sx={{ width: 151 }}
-                  image={support.src}
-                  alt="Live from space album cover"
-                />
-              </Card>
+                  <CardMedia
+                    component="img"
+                    sx={{ width: 151 }}
+                    image={support.src}
+                    alt="Live from space album cover"
+                  />
+                </Card>
+              </motion.div>
             </motion.div>
           </Grid>
           <Grid
             item
-            sm={12}
+            sm={11}
             md={6}
             className="column"
             sx={{
@@ -493,159 +528,176 @@ function Services() {
             }}
           >
             <motion.div
-              whileHover={{ scale: 1.2 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              // viewport={{once : true}}
             >
-              <Card sx={{ display: "flex" }}>
-                <Box sx={{ display: "flex", flexDirection: "column" }}>
-                  <CardContent sx={{ flex: "1 0 auto", marginBottom: "40px" }}>
-                    <Typography
-                      component="div"
-                      variant="h5"
-                      sx={{ width: "243.8px" }}
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <Card sx={{ display: "flex" }}>
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <CardContent
+                      sx={{ flex: "1 0 auto", marginBottom: "40px" }}
                     >
-                      IT Support
-                    </Typography>
-                    <Typography
-                      variant="subtitle1"
-                      color="text.secondary"
-                      component="div"
-                    >
-                      We have all your solutions
-                    </Typography>
-                  </CardContent>
-                  <Box
-                    sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}
-                  >
-                    <IconButton aria-label="play/pause">
-                      <ShareIcon sx={{ height: 20, width: 20 }} />
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                      <AnimatedButton
-                        variants={buttonVariants}
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 17,
-                        }}
-                        size="small"
-                        variant="contained"
-                        sx={{ borderRadius: "95px 95px 95px 95px" }}
+                      <Typography
+                        component="div"
+                        variant="h5"
+                        sx={{ width: "243.8px" }}
                       >
-                        <Typography
-                          variant="body1"
-                          style={{
-                            textTransform: "none",
-                            fontFamily: "Dancing Script",
+                        IT Support
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        color="text.secondary"
+                        component="div"
+                      >
+                        We have all your solutions
+                      </Typography>
+                    </CardContent>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        pl: 1,
+                        pb: 1,
+                      }}
+                    >
+                      <IconButton aria-label="play/pause">
+                        <ShareIcon sx={{ height: 20, width: 20 }} />
+                      </IconButton>
+                      <IconButton aria-label="play/pause">
+                        <AnimatedButton
+                          variants={buttonVariants}
+                          whileHover={{ scale: 1.2 }}
+                          whileTap={{ scale: 0.9 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 400,
+                            damping: 17,
                           }}
-                          onClick={handleOpentwo}
+                          size="small"
+                          variant="contained"
+                          sx={{ borderRadius: "95px 95px 95px 95px" }}
                         >
-                          Learn More
-                        </Typography>
-                        <Modal
-                          aria-labelledby="transition-modal-title"
-                          aria-describedby="transition-modal-description"
-                          open={opentwo}
-                          onClose={handleClosetwo}
-                          closeAfterTransition
-                          slots={{ backdrop: Backdrop }}
-                          slotProps={{
-                            backdrop: {
-                              timeout: 500,
-                            },
-                          }}
-                        >
-                          <Fade in={opentwo}>
-                            <Box sx={style}>
-                              <Card
-                                sx={{
-                                  minWidth: 275,
-                                  padding: "0px 12px 0px 12px",
-                                  margin: "0 0px 30px 0px",
-                                  width: "400px",
-                                }}
-                              >
-                                <CardContent>
-                                  <Grid
-                                    item
-                                    sm={12}
-                                    md={12}
-                                    className="column"
-                                    sx={{
+                          <Typography
+                            variant="body1"
+                            style={{
+                              textTransform: "none",
+                              fontFamily: "Dancing Script",
+                            }}
+                            onClick={handleOpentwo}
+                          >
+                            Learn More
+                          </Typography>
+                          <Modal
+                            aria-labelledby="transition-modal-title"
+                            aria-describedby="transition-modal-description"
+                            open={opentwo}
+                            onClose={handleClosetwo}
+                            closeAfterTransition
+                            slots={{ backdrop: Backdrop }}
+                            slotProps={{
+                              backdrop: {
+                                timeout: 500,
+                              },
+                            }}
+                          >
+                            <Fade in={opentwo}>
+                              <Box sx={style}>
+                                <Card
+                                  sx={{
+                                    minWidth: 275,
+                                    padding: "0px 12px 0px 12px",
+                                    margin: "0 0px 30px 0px",
+                                    width: "400px",
+                                  }}
+                                >
+                                  <CardContent>
+                                    <Grid
+                                      item
+                                      sm={12}
+                                      md={12}
+                                      className="column"
+                                      sx={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                      }}
+                                    >
+                                      <CardMedia
+                                        component="img"
+                                        image={itSupport.src}
+                                        style={{
+                                          height: "250px",
+                                          width: "auto",
+                                        }}
+                                        alt="Sagehill Employee"
+                                      />
+                                    </Grid>
+                                    <Typography
+                                      variant="h5"
+                                      component="h2"
+                                      sx={{
+                                        color: "black",
+                                        fontFamily: "Dancing Script",
+                                        textAlign: "center",
+                                        paddingTop: "20px",
+                                      }}
+                                    >
+                                      IT Support
+                                    </Typography>
+                                  </CardContent>
+                                  <CardActions
+                                    style={{
                                       display: "flex",
                                       justifyContent: "center",
                                     }}
                                   >
-                                    <CardMedia
-                                      component="img"
-                                      image={itSupport.src}
-                                      style={{ height: "250px", width: "auto" }}
-                                      alt="Sagehill Employee"
-                                    />
-                                  </Grid>
-                                  <Typography
-                                    variant="h5"
-                                    component="h2"
-                                    sx={{
-                                      color: "black",
-                                      fontFamily: "Dancing Script",
-                                      textAlign: "center",
-                                      paddingTop: "20px",
-                                    }}
-                                  >
-                                    IT Support
-                                  </Typography>
-                                </CardContent>
-                                <CardActions
-                                  style={{
-                                    display: "flex",
-                                    justifyContent: "center",
-                                  }}
-                                >
-                                  <Typography
-                                    variant="body2"
-                                    style={{ textAlign: "justify" }}
-                                  >
-                                    We provide reliable IT support services to
-                                    keep your systems running smoothly. Our
-                                    experienced team offers comprehensive
-                                    assistance to address your technology needs,
-                                    from troubleshooting hardware and software
-                                    issues to managing network infrastructure.
-                                    With our expertise, you can rely on
-                                    efficient IT operations, minimizing downtime
-                                    and maximizing productivity. Whether you
-                                    need help desk support, system maintenance,
-                                    or strategic IT consulting, we are here to
-                                    assist you. Contact us today to learn more
-                                    about our IT support services and how we can
-                                    help your business thrive.
-                                    <br />
-                                  
-                                  </Typography>
-                                </CardActions>
-                              </Card>
-                            </Box>
-                          </Fade>
-                        </Modal>
-                      </AnimatedButton>
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                      <FavoriteIcon
-                        sx={{ height: 20, width: 20, color: "red" }}
-                      />
-                    </IconButton>
+                                    <Typography
+                                      variant="body2"
+                                      style={{ textAlign: "justify" }}
+                                    >
+                                      We provide reliable IT support services to
+                                      keep your systems running smoothly. Our
+                                      experienced team offers comprehensive
+                                      assistance to address your technology
+                                      needs, from troubleshooting hardware and
+                                      software issues to managing network
+                                      infrastructure. With our expertise, you
+                                      can rely on efficient IT operations,
+                                      minimizing downtime and maximizing
+                                      productivity. Whether you need help desk
+                                      support, system maintenance, or strategic
+                                      IT consulting, we are here to assist you.
+                                      Contact us today to learn more about our
+                                      IT support services and how we can help
+                                      your business thrive.
+                                      <br />
+                                    </Typography>
+                                  </CardActions>
+                                </Card>
+                              </Box>
+                            </Fade>
+                          </Modal>
+                        </AnimatedButton>
+                      </IconButton>
+                      <IconButton aria-label="play/pause">
+                        <FavoriteIcon
+                          sx={{ height: 20, width: 20, color: "red" }}
+                        />
+                      </IconButton>
+                    </Box>
                   </Box>
-                </Box>
-                <CardMedia
-                  component="img"
-                  sx={{ width: 151 }}
-                  image={softwareDevelopment.src}
-                  alt="Live from space album cover"
-                />
-              </Card>
+                  <CardMedia
+                    component="img"
+                    sx={{ width: 151 }}
+                    image={softwareDevelopment.src}
+                    alt="Live from space album cover"
+                  />
+                </Card>
+              </motion.div>
             </motion.div>
           </Grid>
         </Grid>
@@ -690,12 +742,21 @@ function Services() {
                 className="column"
                 sx={{ display: "inline-block", textAlign: "center" }}
               >
-                <IconButton
-                  aria-label="success rate"
-                  sx={{ background: "#326598", borderRadius: "10px" }}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  // viewport={{once : true}}
                 >
-                  <DoneAllIcon sx={{ height: 60, width: 60, color: "white" }} />
-                </IconButton>
+                  <IconButton
+                    aria-label="success rate"
+                    sx={{ background: "#326598", borderRadius: "10px" }}
+                  >
+                    <DoneAllIcon
+                      sx={{ height: 60, width: 60, color: "white" }}
+                    />
+                  </IconButton>
+                </motion.div>
                 <Typography
                   variant="h4"
                   component="h2"
@@ -711,6 +772,7 @@ function Services() {
                   Successful Projects
                 </Typography>
               </Grid>
+
               <Grid
                 item
                 sm={6}
@@ -718,14 +780,21 @@ function Services() {
                 className="column"
                 sx={{ display: "inline-block", textAlign: "center" }}
               >
-                <IconButton
-                  aria-label="success rate"
-                  sx={{ background: "#326598", borderRadius: "10px" }}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  // viewport={{once : true}}
                 >
-                  <VideoCameraBackIcon
-                    sx={{ height: 60, width: 60, color: "white" }}
-                  />
-                </IconButton>
+                  <IconButton
+                    aria-label="success rate"
+                    sx={{ background: "#326598", borderRadius: "10px" }}
+                  >
+                    <VideoCameraBackIcon
+                      sx={{ height: 60, width: 60, color: "white" }}
+                    />
+                  </IconButton>
+                </motion.div>
                 <Typography
                   variant="h4"
                   component="h2"
@@ -741,6 +810,7 @@ function Services() {
                   Media Activities
                 </Typography>
               </Grid>
+
               <Grid
                 item
                 sm={6}
@@ -748,12 +818,21 @@ function Services() {
                 className="column"
                 sx={{ display: "inline-block", textAlign: "center" }}
               >
-                <IconButton
-                  aria-label="success rate"
-                  sx={{ background: "#326598", borderRadius: "10px" }}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  // viewport={{once : true}}
                 >
-                  <GroupsIcon sx={{ height: 60, width: 60, color: "white" }} />
-                </IconButton>
+                  <IconButton
+                    aria-label="success rate"
+                    sx={{ background: "#326598", borderRadius: "10px" }}
+                  >
+                    <GroupsIcon
+                      sx={{ height: 60, width: 60, color: "white" }}
+                    />
+                  </IconButton>
+                </motion.div>
                 <Typography
                   variant="h4"
                   component="h2"
@@ -769,6 +848,7 @@ function Services() {
                   Skilled Experts
                 </Typography>
               </Grid>
+
               <Grid
                 item
                 sm={6}
@@ -776,14 +856,22 @@ function Services() {
                 className="column"
                 sx={{ display: "inline-block", textAlign: "center" }}
               >
-                <IconButton
-                  aria-label="success rate"
-                  sx={{ background: "#326598", borderRadius: "10px" }}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  // viewport={{once : true}}
                 >
-                  <InsertEmoticonIcon
-                    sx={{ height: 60, width: 60, color: "white" }}
-                  />
-                </IconButton>
+                  {" "}
+                  <IconButton
+                    aria-label="success rate"
+                    sx={{ background: "#326598", borderRadius: "10px" }}
+                  >
+                    <InsertEmoticonIcon
+                      sx={{ height: 60, width: 60, color: "white" }}
+                    />
+                  </IconButton>
+                </motion.div>
                 <Typography
                   variant="h4"
                   component="h2"

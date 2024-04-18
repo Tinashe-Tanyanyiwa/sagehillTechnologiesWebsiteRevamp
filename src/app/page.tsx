@@ -6,6 +6,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import CssBaseline from "@mui/material/CssBaseline";
+import BackToTopButton from "./backToTopButton";
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
     <Services></Services>
     <Contact></Contact>
     <Footer></Footer>
+    <BackToTopButton></BackToTopButton>
    </div>
   );
 }
