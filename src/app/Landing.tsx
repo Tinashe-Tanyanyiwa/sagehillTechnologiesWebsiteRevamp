@@ -3,7 +3,7 @@ import Image from "next/image";
 import "./page.module.css";
 import * as React from "react";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
-import useState from "react";
+
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
@@ -45,8 +45,12 @@ import Backdrop from "@mui/material/Backdrop";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import modalBackground from "../../public/Images/modalBackground.png";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import TextField from "@mui/material/TextField";
 import sagehillGuys from "../../public/Images/sagehillGuys.png";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Link from "@mui/material/Link";
+import Contact from "./Contact";
 // MODAL OPEN
 
 const style = {
@@ -64,19 +68,19 @@ const style = {
   position: "relative",
 };
 
-const pages = [
-  "Home",
-  <>
-    {" "}
-    Our Products <ExpandMoreIcon />
-  </>,
-  <>
-    {" "}
-    Our Services <ExpandMoreIcon />
-  </>,
-  "Hosting & Domains",
-  "Contact",
-];
+// const pages = [
+//   "Home",
+//   <>
+//     {" "}
+//     Our Products <ExpandMoreIcon />
+//   </>,
+//   <>
+//     {" "}
+//     Our Services <ExpandMoreIcon />
+//   </>,
+//   "Hosting & Domains",
+//   "Contact",
+// ];
 
 // ANIMATION FOR FLIPPING IMAGE
 const flipAnimation = {
@@ -142,7 +146,103 @@ function Landing() {
   // SCROLL FRAMER MOTION
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
+  // PRODUCTS DROPDOW
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const openProducts = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleCloseProducts = () => {
+    setAnchorEl(null);
+  };
 
+  // END OF DROPDOWN
+  // SERVICES DROPDOW
+  const [anchorElServices, setAnchorElServices] =
+    React.useState<null | HTMLElement>(null);
+  const openServices = Boolean(anchorElServices);
+  const handleClickServices = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElServices(event.currentTarget);
+  };
+  const handleCloseServices = () => {
+    setAnchorElServices(null);
+  };
+
+  // END OF DROPDOWN
+  // HARDWARE AND ACCESSORIES DROPDOW
+  const [anchorElHAA, setAnchorElHAA] = React.useState<null | HTMLElement>(
+    null
+  );
+  const openHAA = Boolean(anchorElHAA);
+  const handleClickHAA = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElHAA(event.currentTarget);
+  };
+  const handleCloseHAA = () => {
+    setAnchorElHAA(null);
+  };
+
+  // END OF DROPDOWN
+  // CYBER SECURITY DROPDOW
+  const [anchorElCS, setAnchorElCS] = React.useState<null | HTMLElement>(null);
+  const openCS = Boolean(anchorElCS);
+  const handleClickCS = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElCS(event.currentTarget);
+  };
+  const handleCloseCS = () => {
+    setAnchorElCS(null);
+  };
+
+  // END OF DROPDOWN
+  // ERP SOFTWARE DROPDOW
+  const [anchorElERP, setAnchorElERP] = React.useState<null | HTMLElement>(
+    null
+  );
+  const openERP = Boolean(anchorElERP);
+  const handleClickERP = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElERP(event.currentTarget);
+  };
+  const handleCloseERP = () => {
+    setAnchorElERP(null);
+  };
+
+  // END OF DROPDOWN
+  // POINT OF SALE DROPDOW
+  const [anchorElPOS, setAnchorElPOS] = React.useState<null | HTMLElement>(
+    null
+  );
+  const openPOS = Boolean(anchorElPOS);
+  const handleClickPOS = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElPOS(event.currentTarget);
+  };
+  const handleClosePOS = () => {
+    setAnchorElPOS(null);
+  };
+
+  // END OF DROPDOWN
+  // HSTING AND DOMAINS  DROPDOW
+  const [anchorElHD, setAnchorElHD] = React.useState<null | HTMLElement>(null);
+  const openHD = Boolean(anchorElHD);
+  const handleClickHD = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorElHD(event.currentTarget);
+  };
+  const handleCloseHD = () => {
+    setAnchorElHD(null);
+  };
+
+  // END OF DROPDOWN
+  // SCROLL EVENT THAT CHANGES COLOR OF NAVBAR
+  const [navColor, setnavColor] = React.useState(false);
+  const listenScrollEvent = () => {
+    if (window.scrollY >= 100) {
+      setnavColor(true);
+      console.log(window.scrollY);
+    } else {
+      setnavColor(false);
+      console.log("Not loading");
+    }
+  };
+  window.addEventListener("scroll", listenScrollEvent);
+  // END OF SCROLL EVENT
   return (
     <div style={{ height: "auto", position: "relative" }}>
       <Image
@@ -165,8 +265,18 @@ function Landing() {
               boxShadow: "none",
             }}
           >
-            <Container maxWidth="xl">
-              <Toolbar disableGutters sx={{ position: "sticky" }}>
+            <Container
+              maxWidth="xl"
+              sx={{
+                paddingLeft: "0px !important",
+                paddingRight: "0px !important",
+              }}
+            >
+              <Toolbar
+                disableGutters
+                sx={{ position: "sticky" }}
+                className={navColor ? "navFluid fixedFluid" : "navFluid"}
+              >
                 <Box sx={{ flexGrow: 0, ml: 3 }}>
                   {/* LOGO */}
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -220,23 +330,53 @@ function Landing() {
                       <Typography textAlign="center">{page}</Typography>
                     </MenuItem>
                   ))} */}
-                    <MenuItem onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">Home</Typography>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">Our Products</Typography>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">Our Services</Typography>
-                    </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">
-                        Hosting & Domains
+                    <Link
+                      href="#home"
+                      color="inherit"
+                      sx={{ textDecoration: "none" }}
+                    >
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">Home</Typography>
+                      </MenuItem>
+                    </Link>
+                    <Link
+                      href="#about"
+                      color="inherit"
+                      sx={{ textDecoration: "none" }}
+                    >
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">About Us</Typography>
+                      </MenuItem>
+                    </Link>
+                    <MenuItem onClick={(event) => handleClick(event)}>
+                      <Typography
+                        textAlign="center"
+                        sx={{ display: "flex", textAlign: "center" }}
+                      >
+                        Our Products <ExpandMoreIcon />
                       </Typography>
                     </MenuItem>
-                    <MenuItem onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">Contact</Typography>
+                    <MenuItem
+                      onClick={(event: React.MouseEvent<HTMLLIElement>) =>
+                        handleClickServices(event)
+                      }
+                    >
+                      <Typography
+                        textAlign="center"
+                        sx={{ display: "flex", textAlign: "center" }}
+                      >
+                        Our Services <ExpandMoreIcon />{" "}
+                      </Typography>
                     </MenuItem>
+                    <Link
+                      href="#contact"
+                      color="inherit"
+                      sx={{ textDecoration: "none" }}
+                    >
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">Contact</Typography>
+                      </MenuItem>
+                    </Link>
                   </Menu>
                 </Box>
                 <Box
@@ -247,15 +387,537 @@ function Landing() {
                   }}
                 >
                   {/* MAIN SCREEN MENU */}
-                  {pages.map((page, index) => (
+                  <Link
+                    href="#home"
+                    color="inherit"
+                    sx={{ textDecoration: "none" }}
+                  >
                     <Button
-                      key={index}
                       onClick={handleCloseNavMenu}
                       sx={{ my: 2, color: "white", display: "flex" }}
                     >
-                      {page}
+                      Home
                     </Button>
-                  ))}
+                  </Link>
+                  <Link
+                    href="#about"
+                    color="inherit"
+                    sx={{ textDecoration: "none" }}
+                  >
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={{ my: 2, color: "white", display: "flex" }}
+                    >
+                      About Us
+                    </Button>
+                  </Link>
+                  <Button
+                    sx={{ my: 2, color: "white", display: "flex" }}
+                    id="basic-button"
+                    aria-controls={openProducts ? "basic-menu" : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={openProducts ? "true" : undefined}
+                    onClick={(event) => {
+                      handleCloseNavMenu();
+                      handleClick(event);
+                    }}
+                  >
+                    Our Products <ExpandMoreIcon />
+                  </Button>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={openProducts}
+                    onClose={handleCloseProducts}
+                    MenuListProps={{
+                      "aria-labelledby": "basic-button",
+                    }}
+                  >
+                    {/* HARDWARE AND ACCESSORIES DROPDOWN AND CHILDREN COMPONENTS */}
+                    <MenuItem
+                      id="basic-button-HAA"
+                      aria-controls={openHAA ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={openHAA ? "true" : undefined}
+                      onClick={(event) => {
+                        handleClickHAA(event);
+                      }}
+                    >
+                      Hardware & Accessories{" "}
+                      <ExpandMoreIcon sx={{ color: "#1976d2" }} />
+                    </MenuItem>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorElHAA}
+                      open={openHAA}
+                      onClose={handleCloseHAA}
+                      MenuListProps={{
+                        "aria-labelledby": "basic-button",
+                      }}
+                    >
+                      <Link
+                        href="https://www.techshop.sagehilltechnologies.com/product-category/server/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseHAA();
+                            handleCloseNavMenu();
+                            handleCloseProducts();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          Servers <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                      <Link
+                        href="https://www.techshop.sagehilltechnologies.com/product-category/nas-devices/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseHAA();
+                            handleCloseNavMenu();
+                            handleCloseProducts();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          NAS Devices{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                      <Link
+                        href="https://www.techshop.sagehilltechnologies.com/product-category/laptops/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseHAA();
+                            handleCloseNavMenu();
+                            handleCloseProducts();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          Laptops and Desktops{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                      <Link
+                        href="https://www.techshop.sagehilltechnologies.com/product-category/accessories/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseHAA();
+                            handleCloseNavMenu();
+                            handleCloseProducts();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          Consumables and Accessories{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                    </Menu>
+                    {/* END OF HARDWARE AND CHILDREN */}
+                    {/* CYBER SECURITY DROPDOWN AND CHILDREN COMPONENTS */}
+                    <MenuItem
+                      id="basic-button-CS"
+                      aria-controls={openCS ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={openCS ? "true" : undefined}
+                      onClick={(event) => {
+                        handleClickCS(event);
+                      }}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      Cyber Security{" "}
+                      <ExpandMoreIcon sx={{ color: "#1976d2" }} />
+                    </MenuItem>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorElCS}
+                      open={openCS}
+                      onClose={handleCloseCS}
+                      MenuListProps={{
+                        "aria-labelledby": "basic-button",
+                      }}
+                    >
+                      <Link
+                        href="https://sagehilltechnologies.com/sophos.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseCS();
+                            handleCloseNavMenu();
+                            handleCloseProducts();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          Sophos Security{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                      <Link
+                        href="https://sagehilltechnologies.com/topia.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseCS();
+                            handleCloseNavMenu();
+                            handleCloseProducts();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          Topia Vulnerability Assessment{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                    </Menu>
+                    {/* END OF CYBER SECURITY AND CHILDREN */}
+                    {/* ERP SOFTWARE DROPDOWN AND CHILDREN COMPONENTS */}
+                    <MenuItem
+                      id="basic-button-ERP"
+                      aria-controls={openERP ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={openERP ? "true" : undefined}
+                      onClick={(event) => {
+                        handleClickERP(event);
+                      }}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      ERP Software <ExpandMoreIcon sx={{ color: "#1976d2" }} />
+                    </MenuItem>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorElERP}
+                      open={openERP}
+                      onClose={handleCloseERP}
+                      MenuListProps={{
+                        "aria-labelledby": "basic-button",
+                      }}
+                    >
+                      <Link
+                        href="https://sagehilltechnologies.com/palladium.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseERP();
+                            handleCloseNavMenu();
+                            handleCloseProducts();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          Palladium Accounting{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                    </Menu>
+                    {/* END OF ERP SOFTWARE AND CHILDREN */}
+                    {/* POINT OF SALE DROPDOWN AND CHILDREN COMPONENTS */}
+                    <MenuItem
+                      id="basic-button-POS"
+                      aria-controls={openPOS ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={openPOS ? "true" : undefined}
+                      onClick={(event) => {
+                        handleClickPOS(event);
+                      }}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      Point Of Sale <ExpandMoreIcon sx={{ color: "#1976d2" }} />
+                    </MenuItem>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorElPOS}
+                      open={openPOS}
+                      onClose={handleClosePOS}
+                      MenuListProps={{
+                        "aria-labelledby": "basic-button",
+                      }}
+                    >
+                      {" "}
+                      <Link
+                        href="https://sagehilltechnologies.com/ivend.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleClosePOS();
+                            handleCloseNavMenu();
+                            handleCloseProducts();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          Ivend Retail{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                    </Menu>
+                    {/* END OF POINT OF SALE AND CHILDREN */}
+                    {/* <Link
+                      href="https://sagehilltechnologies.com/ivend.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      color="inherit"
+                      sx={{ textDecoration: "none" }}
+                    >
+                      <MenuItem
+                        onClick={() => {
+                          handleCloseProducts();
+                          handleCloseNavMenu();
+                          handleCloseProducts();
+                        }}
+                      >
+                        Hospital MIS
+                      </MenuItem>
+                    </Link> */}
+                  </Menu>
+
+                  <Button
+                    sx={{ my: 2, color: "white", display: "flex" }}
+                    id="basic-button-services"
+                    aria-controls={openServices ? "basic-menu" : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={openServices ? "true" : undefined}
+                    onClick={(event) => {
+                      handleCloseNavMenu();
+                      handleClickServices(event);
+                    }}
+                  >
+                    Our Services <ExpandMoreIcon />
+                  </Button>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorElServices}
+                    open={openServices}
+                    onClose={handleCloseServices}
+                    MenuListProps={{
+                      "aria-labelledby": "basic-button",
+                    }}
+                  >
+                    <Link
+                      href="#software"
+                      color="inherit"
+                      sx={{ textDecoration: "none" }}
+                    >
+                      <MenuItem
+                        onClick={() => {
+                          handleCloseServices();
+                          handleCloseNavMenu();
+                          handleCloseProducts();
+                        }}
+                      >
+                        Software Development
+                      </MenuItem>
+                    </Link>
+                    {/* <MenuItem
+                      onClick={() => {
+                        handleCloseServices();
+                        handleCloseNavMenu();
+                        handleCloseProducts();
+                      }}
+                    >
+                      Hosting & Domains
+                    </MenuItem> */}
+                    {/* HOSTING AND DOMAINS DROPDOWN AND CHILDREN COMPONENTS */}
+                    <MenuItem
+                      id="basic-button-HD"
+                      aria-controls={openHD ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={openHD ? "true" : undefined}
+                      onClick={(event) => {
+                        // handleCloseNavMenu();
+                        handleClickHD(event);
+                      }}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      Hosting & Domains{" "}
+                      <ExpandMoreIcon sx={{ color: "#1976d2" }} />
+                    </MenuItem>
+                    <Menu
+                      id="basic-menu"
+                      anchorEl={anchorElHD}
+                      open={openHD}
+                      onClose={handleCloseHD}
+                      MenuListProps={{
+                        "aria-labelledby": "basic-button",
+                      }}
+                    >
+                      <Link
+                        href="https://sagehillhost.com/index.php?rp=/store/ssl-certificates"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseHD();
+                            handleCloseNavMenu();
+                            handleCloseServices();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          SSL Certificates{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                      <Link
+                        href="https://sagehillhost.com/cart.php?a=add&domain=register"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseHD();
+                            handleCloseNavMenu();
+                            handleCloseServices();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          Domain Registration{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                      <Link
+                        href="https://sagehillhost.com/index.php?rp=/store/shared-hosting"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        color="inherit"
+                        sx={{ textDecoration: "none" }}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleCloseHD();
+                            handleCloseNavMenu();
+                            handleCloseServices();
+                          }}
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                          }}
+                        >
+                          Hosting Space{" "}
+                          <ArrowForwardIcon sx={{ color: "#1976d2" }} />
+                        </MenuItem>
+                      </Link>
+                    </Menu>
+                    {/* END OF HOSTING AND DOMAINS AND CHILDREN */}
+                    <Link
+                      href="#software"
+                      color="inherit"
+                      sx={{ textDecoration: "none" }}
+                    >
+                      <MenuItem
+                        onClick={() => {
+                          handleCloseServices();
+                          handleCloseNavMenu();
+                          handleCloseProducts();
+                        }}
+                      >
+                        IT Support
+                      </MenuItem>
+                    </Link>
+                  </Menu>
+                  <Link
+                    href="#contact"
+                    color="inherit"
+                    sx={{ textDecoration: "none" }}
+                  >
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={{ my: 2, color: "white", display: "flex" }}
+                    >
+                      Contact
+                    </Button>
+                  </Link>
                 </Box>
               </Toolbar>
             </Container>
@@ -272,6 +934,7 @@ function Landing() {
             display: "flex",
             justifyContent: "center",
           }}
+          id="home"
         >
           <Grid
             item
@@ -288,7 +951,7 @@ function Landing() {
                 <Typography
                   variant="h3"
                   component="h2"
-                  sx={{ color: "white", fontFamily: "Dancing Script" }}
+                  sx={{ color: "white", fontStyle: "italic" }}
                 >
                   TECHNOLOGY SIMPLIFIED
                 </Typography>
@@ -348,7 +1011,7 @@ function Landing() {
                       component="h2"
                       sx={{
                         color: "black",
-                        fontFamily: "Dancing Script",
+
                         textAlign: "center",
                       }}
                     >
@@ -501,7 +1164,7 @@ function Landing() {
                         component="h2"
                         sx={{
                           color: "black",
-                          fontFamily: "Dancing Script",
+                          fontStyle: "italic",
                           textAlign: "center",
                         }}
                       >
@@ -519,8 +1182,6 @@ function Landing() {
                         world gain competitive advantage through the provision
                         of innovative and simplified ICT business solutions that
                         improve their profitability.
-                        <br />
-                        {'"a benevolent smile"'}
                       </Typography>
                     </CardActions>
                   </Card>
@@ -572,7 +1233,7 @@ function Landing() {
                         component="h2"
                         sx={{
                           color: "black",
-                          fontFamily: "Dancing Script",
+                          fontStyle: "italic",
                           textAlign: "center",
                         }}
                       >
@@ -590,8 +1251,6 @@ function Landing() {
                         effective and high quality ICT products thereby
                         maximizing wealth for shareholders and other key
                         stakeholders.
-                        <br />
-                        {'"a benevolent smile"'}
                       </Typography>
                     </CardActions>
                   </Card>
@@ -643,7 +1302,7 @@ function Landing() {
                         component="h2"
                         sx={{
                           color: "black",
-                          fontFamily: "Dancing Script",
+                          fontStyle: "italic",
                           textAlign: "center",
                         }}
                       >
@@ -661,8 +1320,6 @@ function Landing() {
                         Company, established in 2011 by an innovative team of
                         highly motivated and energetic, young entrepreneurs with
                         international experience.
-                        <br />
-                        {'"a benevolent smile"'}
                       </Typography>
                     </CardActions>
                   </Card>
@@ -679,6 +1336,7 @@ function Landing() {
             rowSpacing={1}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             sx={{ marginTop: "80px" }}
+            id="about"
           >
             <Grid
               item
@@ -710,6 +1368,7 @@ function Landing() {
               sm={12}
               md={6}
               className="column"
+
               // sx={{ display: "flex"}}
             >
               <motion.div
@@ -731,7 +1390,7 @@ function Landing() {
                     component="h2"
                     sx={{
                       color: "white",
-                      fontFamily: "Dancing Script",
+
                       backgroundColor: "#222D3D",
                       width: "60%",
                       height: "50px",
@@ -740,6 +1399,7 @@ function Landing() {
                       justifyContent: "center",
                       borderRadius: "200px 0px 200px",
                       textAlign: "justify",
+                      fontStyle: "italic",
                     }}
                   >
                     About Us

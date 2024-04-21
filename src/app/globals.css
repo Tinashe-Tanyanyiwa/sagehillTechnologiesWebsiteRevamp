@@ -60,3 +60,14 @@
     justify-content: center;
   }
 }
+
+.navFluid {
+  background-color: transparent;
+}
+.fixedFluid {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.css-46bh2p-MuiCardContent-root {
+  padding: 0px !important;
+}

@@ -72,9 +72,10 @@ function Contact() {
             component="h2"
             sx={{
               color: "black",
-              fontFamily: "Dancing Script",
+              // fontFamily: "Dancing Script",
               textAlign: "center",
             }}
+            id="contact"
           >
             Contact Us
           </Typography>
@@ -113,7 +114,7 @@ function Contact() {
               component="h2"
               sx={{
                 color: "white",
-                fontFamily: "Dancing Script",
+                // fontFamily: "Dancing Script",
                 backgroundColor: "#222D3D",
                 width: "60%",
                 height: "50px",
@@ -121,6 +122,7 @@ function Contact() {
                 alignItems: "center",
                 justifyContent: "center",
                 borderRadius: "200px 0px 200px",
+                fontStyle: "italic",
               }}
             >
               Contact Us
@@ -149,7 +151,7 @@ function Contact() {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClick}
           >
-            The Emails we use{" "}
+            <span style={{ textTransform: 'capitalize' }}>The Emails we use</span>
             <IconButton aria-label="success rate">
               <ArrowDropDownIcon sx={{ color: "#1976d2" }} />
             </IconButton>
@@ -163,8 +165,12 @@ function Contact() {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose}>info@sagehilltechnologies.com</MenuItem>
-            <MenuItem onClick={handleClose}>support@sagehilltechnologies.comt</MenuItem>
+            <MenuItem onClick={handleClose}>
+              info@sagehilltechnologies.com
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              support@sagehilltechnologies.comt
+            </MenuItem>
           </Menu>
         </Grid>
         <Grid
@@ -193,6 +199,7 @@ function Contact() {
             label="Email"
             variant="outlined"
             sx={{ marginTop: "40px" }}
+            type="email"
           />
           <TextField
             fullWidth

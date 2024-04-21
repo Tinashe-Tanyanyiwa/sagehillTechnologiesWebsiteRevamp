@@ -106,7 +106,7 @@ function About() {
                       component="h2"
                       sx={{
                         color: "black",
-                        fontFamily: "Dancing Script",
+
                         textAlign: "center",
                       }}
                     >
@@ -170,7 +170,7 @@ function About() {
                       component="h2"
                       sx={{
                         color: "black",
-                        fontFamily: "Dancing Script",
+
                         textAlign: "center",
                       }}
                     >
@@ -233,7 +233,7 @@ function About() {
                       component="h2"
                       sx={{
                         color: "black",
-                        fontFamily: "Dancing Script",
+                        // fontFamily: "Dancing Script",
                         textAlign: "center",
                       }}
                     >
@@ -304,7 +304,7 @@ function About() {
                   component="h2"
                   sx={{
                     color: "white",
-                    fontFamily: "Dancing Script",
+
                     backgroundColor: "#222D3D",
                     width: "60%",
                     height: "50px",
@@ -313,6 +313,7 @@ function About() {
                     justifyContent: "center",
                     borderRadius: "200px 0px 200px",
                     textAlign: "justify",
+                    fontStyle: "italic",
                   }}
                 >
                   About Us
@@ -329,12 +330,18 @@ function About() {
                   whileHover={{ scale: 1.1, originX: 0, color: "#f8e112" }}
                   transition={{ type: "spring", stiffness: 300 }}
                 > */}
+                
               <Typography
                 variant="subtitle2"
                 component="h2"
-                sx={{ color: "black", fontSize: "19px", paddingTop: "30px",textAlign:"justify" }}
+                sx={{
+                  color: "black",
+                  fontSize: "19px", 
+                  paddingTop: "30px",
+                  textAlign: "justify",
+                }}
               >
-                Sagehill is an enabler of 4IR(the 4th Industrial Revolution)
+                Sagehill is an enabler of 4IR ( 4th Industrial Revolution)
                 mainly focusing on digital transformation through business
                 process automation. We offer a wide range of ICT Solutions
                 including Mobile applications development, Sagehill Hospital

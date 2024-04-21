@@ -135,7 +135,7 @@ function Footer() {
                 component="h2"
                 sx={{ color: "white", fontSize: "19px", marginLeft: "34px", marginTop:"20px", marginBottom:"20px" }}
               >
-              © 2024 sagehilltechnologies ,All Rights Reserved. Design by Sagehill Business Solutions
+              © 2024 sagehilltechnologies, All Rights Reserved. Design by Sagehill Business Solutions
               </Typography>
         </Grid>
       </Container>

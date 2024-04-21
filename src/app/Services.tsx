@@ -41,6 +41,7 @@ import CardActions from "@mui/material/CardActions";
 import missionIcon from "../../public/Images/missionIcon.png";
 import domainsHosting from "../../public/Images/domainsHosting.jpg";
 import itSupport from "../../public/Images/itSupport.jpg";
+import CodeIcon from '@mui/icons-material/Code';
 
 // MODAL OPEN
 
@@ -124,9 +125,10 @@ function Services() {
               component="h2"
               sx={{
                 color: "black",
-                fontFamily: "Dancing Script",
+                
                 textAlign: "center",
               }}
+              id="software"
             >
               Our Products & Services
             </Typography>
@@ -162,6 +164,7 @@ function Services() {
               justifyContent: "center",
               marginTop: "60px",
             }}
+            
           >
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
@@ -181,7 +184,7 @@ function Services() {
                       <Typography
                         component="div"
                         variant="h5"
-                        sx={{ width: "243.8px" }}
+                        sx={{ width: "243.8px", fontWeight: 'bold' }}
                       >
                         Software Development
                       </Typography>
@@ -189,6 +192,7 @@ function Services() {
                         variant="subtitle1"
                         color="text.secondary"
                         component="div"
+                        sx={{fontStyle: "italic",}}
                       >
                         Front-end & Back-end
                       </Typography>
@@ -222,7 +226,7 @@ function Services() {
                             variant="body1"
                             style={{
                               textTransform: "none",
-                              fontFamily: "Dancing Script",
+                              // fontFamily: "Dancing Script",
                             }}
                             onClick={handleOpen}
                           >
@@ -278,7 +282,7 @@ function Services() {
                                       component="h2"
                                       sx={{
                                         color: "black",
-                                        fontFamily: "Dancing Script",
+                                        // fontFamily: "Dancing Script",
                                         textAlign: "center",
                                         paddingTop: "20px",
                                       }}
@@ -365,7 +369,7 @@ function Services() {
                       <Typography
                         component="div"
                         variant="h5"
-                        sx={{ width: "243.8px" }}
+                        sx={{ width: "243.8px", fontWeight: 'bold' }}
                       >
                         Hosting & Domains
                       </Typography>
@@ -373,6 +377,7 @@ function Services() {
                         variant="subtitle1"
                         color="text.secondary"
                         component="div"
+                        sx={{fontStyle: "italic",}}
                       >
                         Everything Web Related
                       </Typography>
@@ -406,7 +411,7 @@ function Services() {
                             variant="body1"
                             style={{
                               textTransform: "none",
-                              fontFamily: "Dancing Script",
+                              // fontFamily: "Dancing Script",
                             }}
                             onClick={handleOpenone}
                           >
@@ -461,7 +466,7 @@ function Services() {
                                       component="h2"
                                       sx={{
                                         color: "black",
-                                        fontFamily: "Dancing Script",
+                                 
                                         textAlign: "center",
                                         paddingTop: "20px",
                                       }}
@@ -526,6 +531,7 @@ function Services() {
               justifyContent: "center",
               marginTop: "60px",
             }}
+            id="support"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
@@ -545,7 +551,7 @@ function Services() {
                       <Typography
                         component="div"
                         variant="h5"
-                        sx={{ width: "243.8px" }}
+                        sx={{ width: "243.8px", fontWeight: 'bold' }}
                       >
                         IT Support
                       </Typography>
@@ -553,6 +559,7 @@ function Services() {
                         variant="subtitle1"
                         color="text.secondary"
                         component="div"
+                        sx={{fontStyle: "italic",}}
                       >
                         We have all your solutions
                       </Typography>
@@ -586,7 +593,7 @@ function Services() {
                             variant="body1"
                             style={{
                               textTransform: "none",
-                              fontFamily: "Dancing Script",
+                          
                             }}
                             onClick={handleOpentwo}
                           >
@@ -641,7 +648,7 @@ function Services() {
                                       component="h2"
                                       sx={{
                                         color: "black",
-                                        fontFamily: "Dancing Script",
+                                 
                                         textAlign: "center",
                                         paddingTop: "20px",
                                       }}
@@ -760,14 +767,14 @@ function Services() {
                 <Typography
                   variant="h4"
                   component="h2"
-                  sx={{ color: "white", fontFamily: "Dancing Script" }}
+                  sx={{ color: "white", fontWeight: 'bold' }}
                 >
                   30
                 </Typography>
                 <Typography
                   variant="h5"
                   component="h2"
-                  sx={{ color: "white", fontFamily: "Dancing Script" }}
+                  sx={{ color: "white", fontStyle: "italic", }}
                 >
                   Successful Projects
                 </Typography>
@@ -798,14 +805,14 @@ function Services() {
                 <Typography
                   variant="h4"
                   component="h2"
-                  sx={{ color: "white", fontFamily: "Dancing Script" }}
+                  sx={{ color: "white", fontWeight: 'bold' }}
                 >
                   54
                 </Typography>
                 <Typography
                   variant="h5"
                   component="h2"
-                  sx={{ color: "white", fontFamily: "Dancing Script" }}
+                  sx={{ color: "white", fontStyle: "italic",}}
                 >
                   Media Activities
                 </Typography>
@@ -836,14 +843,14 @@ function Services() {
                 <Typography
                   variant="h4"
                   component="h2"
-                  sx={{ color: "white", fontFamily: "Dancing Script" }}
+                  sx={{ color: "white", fontWeight: 'bold' }}
                 >
                   12
                 </Typography>
                 <Typography
                   variant="h5"
                   component="h2"
-                  sx={{ color: "white", fontFamily: "Dancing Script" }}
+                  sx={{ color: "white", fontStyle: "italic", }}
                 >
                   Skilled Experts
                 </Typography>
@@ -875,14 +882,14 @@ function Services() {
                 <Typography
                   variant="h4"
                   component="h2"
-                  sx={{ color: "white", fontFamily: "Dancing Script" }}
+                  sx={{ color: "white", fontWeight: 'bold' }}
                 >
                   500
                 </Typography>
                 <Typography
                   variant="h5"
                   component="h2"
-                  sx={{ color: "white", fontFamily: "Dancing Script" }}
+                  sx={{ color: "white", fontStyle: "italic",}}
                 >
                   Happy Clients
                 </Typography>
